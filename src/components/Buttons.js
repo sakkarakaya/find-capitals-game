@@ -50,7 +50,7 @@ export default function ContainedButtons(props) {
     setDisable(true)
     if (kilometers - props.distance <= 0) {
       setNextDisable(true)
-      setResultText("Game over. Your kilometer is below 0")
+      setResultText(`Game over. Your kilometer is below 0. Your score: ${score}`)
     }
   }
   const playAgain = () => {

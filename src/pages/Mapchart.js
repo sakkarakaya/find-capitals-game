@@ -6,6 +6,7 @@ import { useState } from "react";
 
 const api_key = process.env.REACT_APP_API_KEY
 
+
 //customize google maps view
 const mapStyles = [
   {
@@ -229,11 +230,10 @@ const MyMapComponent = compose(
       isMarkerShown: true,
       markerLat: e.latLng.lat(),
       markerLong: e.latLng.lng()
-      
    })
   }),
   withProps({
-    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyBQMJ_kftmYX_DptkoPw4mV9mLJw98psog&v=3.exp&libraries=geometry,drawing,places",
+    googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${api_key}&v=3.exp&libraries=geometry,drawing,places`,
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `400px` }} />,
     mapElement: <div style={{ height: `100%` }} />,
@@ -257,7 +257,7 @@ const MyMapComponent = compose(
       
     );
     console.log("dis", dis / 1000)
-    props.distance(dis/1000)
+    props.distance(parseInt(dis/1000))
 
   }
   console.log("mapchart index",cityIndex)
